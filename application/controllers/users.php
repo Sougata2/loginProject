@@ -39,12 +39,12 @@ class Users extends CI_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $user_id = $this->user_model->login_user($username, $password);
+        $user = $this->user_model->login_user($username, $password);
 
-        if ($user_id) {
+        if ($user) {
             // Setting user data into a session.
             $user_data = [
-                'user_id' => $user_id,
+                'user' => $user,
                 'username' => $username,
                 'logged_in' => true
             ];
