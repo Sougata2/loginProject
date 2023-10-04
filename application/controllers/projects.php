@@ -41,7 +41,7 @@ class Projects extends CI_Controller
             );
 
             if ($this->projects_model->create_project($data)) {
-                $this->session->set_flashdata('project_created', 'Your Project ['.$data['project_name'].'] has been created');
+                $this->session->set_flashdata('project_created', 'Your Project [' . $data['project_name'] . '] has been created');
                 redirect('projects/index');
             }
         }
@@ -75,6 +75,7 @@ class Projects extends CI_Controller
     public function delete($project_id)
     {
         $delete_data = $this->projects_model->get_projects_info($project_id);
+        $this->projects_model->delete_project_task($project_id);
         $this->projects_model->delete_project($project_id);
         $this->session->set_flashdata('project_deleted', 'Your project [' . $delete_data->project_name . '] has been deleted');
         redirect('projects/index');

@@ -61,4 +61,9 @@ class Projects_model extends CI_Model
         }
         return $query->result();
     }
+
+    public function delete_project_task($project_id){
+        $this->db->where('project_id', $project_id);
+        return $this->db->delete('tasks');
+    }
 }

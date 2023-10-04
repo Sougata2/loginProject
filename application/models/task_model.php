@@ -22,5 +22,10 @@ class Task_model extends CI_Model
         return $task_id;
     }
 
-
+    public function delete_task($task_id)
+    {
+        $this->db->where('id', $task_id);
+        $this->db->delete('tasks');
+        return true;
+    }
 }
