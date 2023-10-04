@@ -9,7 +9,8 @@
 <h3>Tasks</h3>
 <?php if ($completed_tasks) : ?>
     <?php foreach ($completed_tasks as $task) : ?>
-        <?= $tasks->task_name ?>
+        <h5><?= $task->task_name ?></h5>
+        <p><?= $task->task_body ?></p>
     <?php endforeach; ?>
 <?php endif; ?>
 
