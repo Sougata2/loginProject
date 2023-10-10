@@ -10,7 +10,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'task_name',
-        'placeholder' => 'Enter Task Name'
+        'placeholder' => 'Enter Task Name',
+        'value' => set_value('task_name')
     ] ?>
     <?= form_input($data) ?>
 </div>
@@ -20,6 +21,7 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'task_body',
+        'value' => set_value('task_body')
     ] ?>
     <?= form_textarea($data) ?>
 </div>
@@ -28,7 +30,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'due_date',
-        'type' => 'date'
+        'type' => 'date',
+        'value' => set_value('due_date')
     ] ?>
     <?= form_input($data) ?>
 </div>

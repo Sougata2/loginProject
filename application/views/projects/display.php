@@ -4,6 +4,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
+<?php if ($this->session->flashdata('status_update')) : ?>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('status_update') ?>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 <div class="col-xs-3">
     <h1><?= $project_data->project_name ?></h1>
     <h3>Description</h3>
@@ -12,14 +18,28 @@
     </p>
 </div>
 
-<?php if ($completed_tasks) : ?>
-    <h3>Tasks</h3>
-    <?php foreach ($completed_tasks as $task) : ?>
-        <p>
-            <a href="<?= base_url() ?>index.php/tasks/display/<?= $task->id ?>"><?= $task->task_name ?></a>
-        </p>
-    <?php endforeach; ?>
+<?php if ($not_completed_tasks) : ?>
+    <h3>Active Tasks</h3>
+    <ul>
+        <?php foreach ($not_completed_tasks as $task) : ?>
+            <p>
+                <a href="<?= base_url() ?>index.php/tasks/display/<?= $task->id ?>"><?= $task->task_name ?></a>
+            </p>
+        <?php endforeach; ?>
+    </ul>
 <?php endif; ?>
+
+<?php if ($completed_tasks) : ?>
+    <h3>Completed Tasks</h3>
+    <ul>
+        <?php foreach ($completed_tasks as $task) : ?>
+            <p>
+                <a href="<?= base_url() ?>index.php/tasks/display/<?= $task->id ?>"><?= $task->task_name ?></a>
+            </p>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+
 
 <div class="col-xs-3 my-4">
     <ul class="list-group">

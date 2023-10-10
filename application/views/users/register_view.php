@@ -10,7 +10,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'first_name',
-        'placeholder' => 'Enter First Name'
+        'placeholder' => 'Enter First Name',
+        'value' => set_value('first_name')
     ] ?>
     <?= form_input($data) ?>
 </div>
@@ -20,7 +21,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'last_name',
-        'placeholder' => 'Enter Last Name'
+        'placeholder' => 'Enter Last Name',
+        'value' => set_value('last_name')
     ] ?>
     <?= form_input($data) ?>
 </div>
@@ -30,7 +32,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'email',
-        'placeholder' => 'Enter Email'
+        'placeholder' => 'Enter Email',
+        'value' => set_value('email')
     ] ?>
     <?= form_input($data) ?>
 </div>
@@ -40,7 +43,8 @@
     <?php $data = [
         'class' => 'form-control',
         'name' => 'username',
-        'placeholder' => 'Enter Username'
+        'placeholder' => 'Enter Username',
+        'value' => set_value('username')
     ] ?>
     <?= form_input($data) ?>
 </div>
